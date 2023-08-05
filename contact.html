@@ -15,6 +15,7 @@ Author URL: http://w3layouts.com
         rel="stylesheet">
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -123,8 +124,9 @@ Author URL: http://w3layouts.com
                         
                     </ul>
                 </div>
+                
                 <div class="col-md-6 contact-right mt-md-0 mt-5 ps-lg-0">
-                    <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="signin-form">
+                    <form id = "submit-form"   class="signin-form">
                         <div class="input-grids">
                             <input type="text" name="w3lName" id="w3lName" placeholder="Your Name*"
                                 class="contact-input" required="" />
@@ -262,6 +264,22 @@ Author URL: http://w3layouts.com
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap -->
     <!-- //Js scripts -->
+
+   
+    <script>
+        const scriptURL = ' https://script.google.com/macros/s/AKfycbxxgi6vDzy4SvfewHzM1fi6yJvSbnNiXKCCSEvNi_2UkdaoX1_UUBVKZgtRvJyw_1GSnA/exec'
+        const form = document.forms['formName']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thank you! your form is submitted successfully." ))
+            .then(() => {  window.location.reload(); })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+    
 </body>
 
 </html>
