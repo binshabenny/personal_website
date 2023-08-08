@@ -15,7 +15,6 @@ Author URL: http://w3layouts.com
         rel="stylesheet">
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -124,27 +123,28 @@ Author URL: http://w3layouts.com
                         
                     </ul>
                 </div>
-                
+                <!-- contact_form-->
                 <div class="col-md-6 contact-right mt-md-0 mt-5 ps-lg-0">
-                    <form id = "submit-form"   class="signin-form">
+                    <form id = "submit-form"  action="https://formspree.io/f/mzblebzl" method="POST" class="signin-form">
                         <div class="input-grids">
                             <input type="text" name="w3lName" id="w3lName" placeholder="Your Name*"
-                                class="contact-input" required="" />
+                                class="contact-input" required="" name ="name" />
                             <input type="email" name="w3lSender" id="w3lSender" placeholder="Your Email*"
-                                class="contact-input" required="" />
+                                class="contact-input" required="" name="email" />
                             <input type="text" name="w3lSubect" id="w3lSubect" placeholder="Subject*"
-                                class="contact-input" required="" />
+                                class="contact-input" required="" name="subject" />
                             
                         </div>
                         <div class="form-input">
                             <textarea name="w3lMessage" id="w3lMessage" placeholder="Type your message here*"
-                                required=""></textarea>
+                                required="" name="message"></textarea>
                         </div>
                         <button class="btn btn-style">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
+        <!-- contact_form-->
     </section>
     <!-- map -->
     <div class="map-iframe">
@@ -265,19 +265,7 @@ Author URL: http://w3layouts.com
     <!-- //bootstrap -->
     <!-- //Js scripts -->
 
-   
-    <script>
-        const scriptURL = ' https://script.google.com/macros/s/AKfycbxxgi6vDzy4SvfewHzM1fi6yJvSbnNiXKCCSEvNi_2UkdaoX1_UUBVKZgtRvJyw_1GSnA/exec'
-        const form = document.forms['formName']
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => alert("Thank you! your form is submitted successfully." ))
-            .then(() => {  window.location.reload(); })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
+    
 
     
 </body>
